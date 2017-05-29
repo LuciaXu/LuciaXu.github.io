@@ -15,8 +15,6 @@ paginate:            5
 # Pages
 pages:
   Archive: '/archive'
-  About: '/about'
-  Tags: '/tags'
 
 # About/contact
 author:

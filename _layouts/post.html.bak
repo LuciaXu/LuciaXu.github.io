@@ -34,5 +34,4 @@ layout: default
   </ul>
 </div>
 
-{% include comments.html %}
 {% include copyright.html %}
