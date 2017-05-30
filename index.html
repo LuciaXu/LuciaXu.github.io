@@ -15,7 +15,7 @@ comments: True
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.excerpt }}
+    {{ post.content | markdownify | strip_html | truncatewords: 50 }}
   </div>
   {% endfor %}
 </div>
