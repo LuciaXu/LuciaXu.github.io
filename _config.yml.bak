@@ -11,7 +11,6 @@ description:         'A reserved <a href="http://jekyllrb.com" target="_blank">J
 url:                 https://luciaxu.github.io/
 baseurl:             ''
 paginate:            5
-excerpt_separator: "\n\n" # you can specify your own separator here, default is "\n\n" String
 
 # Pages
 pages:
@@ -31,3 +30,5 @@ version:             1.0.0
 
 # Gems
 gems: [jekyll-paginate]
+
+excerpt_separator: "\n\n" # you can specify your own separator here, default is "\n\n" String
