@@ -8,4 +8,3 @@ title: Archive
 {% endfor %}
 
 {% include copyright.html %}
-

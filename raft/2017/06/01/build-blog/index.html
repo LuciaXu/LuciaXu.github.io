@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How I build this blog with Jeklly and GitHub Pages (Step-by-Step) &middot; Lucia Xu
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/tags/">Tags</a>
+        
+      
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Lucia Xu</a>
+            <small>Learning how to learn</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        
+
+<div class="post">
+  <h1 class="post-title">How I build this blog with Jeklly and GitHub Pages (Step-by-Step)</h1>
+  <div class="post-title-footer">
+  <span class="post-date" style="display:inline-block">01 Jun 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span class="post-tag-box" style="display:inline-block;">
+   
+     
+     <a href="http://localhost:4000tags/#jekyll"><i class="fa fa-tags fa-rotate-90 fa-sm"></i>jekyll</a>
+   
+  </span>
+  </div>
+  <div class="message">
+  This is a step-by-step record of how I build this blog with Jeklly and GitHub Pages. 
+</div>
+
+<p>All the files to build this blog could be found at <a href="https://github.com/LuciaXu/LuciaXu.github.io">my Github repository</a>.</p>
+
+<h3 id="step-1-fork-lanyon-theme-to-my-github-repository">Step 1: Fork Lanyon Theme to my Github repository.</h3>
+
+<p>There are lots of <a href="http://jekyllthemes.org/">Jeklly Themes</a> that we could choose from. I choose <a href="https://github.com/poole/lanyon">Lanyon</a> because it’s the simplest one. Here are the steps to get started.</p>
+
+<ul>
+  <li>Fork the theme repository to my own github.</li>
+  <li>Rename the repository to <em>username.github.io</em></li>
+  <li>Change something in the <em>_config.yml</em> file (or any file in the repository). It’ll force GitHub Pages to build the website.</li>
+</ul>
+
+<p>Now, when I go to <em>http://username.github.io</em>, the website is there.</p>
+
+<h3 id="step-2-customize-the-website">Step 2: Customize the website.</h3>
+
+<ul>
+  <li>Know the basic structure of Jeklly directory.</li>
+  <li>Install Jeklly.</li>
+</ul>
+
+<p>To customize the website, you need to know some basic  ideas about how Jeklly site directory is structured. In Lanyon it looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">.</span>
+<span class="o">|</span>
+<span class="o">|--</span> <span class="nx">_config</span><span class="p">.</span><span class="nx">yml</span>
+<span class="o">|</span>
+<span class="o">|--</span> <span class="nx">_includes</span>
+<span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="nx">head</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="nx">sidebar</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>
+<span class="o">|--</span> <span class="nx">_layouts</span>
+<span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="nx">page</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="nx">post</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="p">...</span>
+<span class="o">|</span>
+<span class="o">|--</span> <span class="nx">_posts</span>
+<span class="o">|</span>       <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="nx">blog</span><span class="p">.</span><span class="nx">md</span>
+<span class="o">|</span>       <span class="o">|--</span> <span class="p">...</span>
+<span class="o">|</span>
+<span class="o">|--</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span></code></pre></figure>
+
+<p>The detail of the directory structure is <a href="https://jekyllrb.com/docs/structure/">here</a>. Basically, <em>_config.yml</em> stores some configuration data, like the name and url of the blog. <em>_layouts</em> files are templates of the posts. <em>_includes</em> files are partials that can be reused in layouts and posts. <em>_posts</em> files are where your blog posts are stored. <em>index.html</em> is the root directory (home) of your blog.</p>
+
+<p>Every time you change something in the directory, push it to the github repository, GitHub pages will build it automatically. However, a better way of doing this, is to check if everything is what you want it to be before you push it to github. Therefore, I installed Jekyll on my laptop. (Since the os of my laptop is Windows 10, I followed <a href="http://jekyll-windows.juthilo.com/">this guide</a>.)</p>
+
+<p>After install Jekyll, navigate into the root directory of the local Jekyll site repository and put <em>jekyll serve</em> command, then the preview of the website can be found at <em>http://localhost:4000</em> . So that every time you change something, you can review it before push it to the GitHub Pages.</p>
+
+<h3 id="step-3-add-an-archive-page-to-my-website">Step 3: Add an archive page to my website.</h3>
+
+<p>Create a markdown file in the root directory. Here’s the code to build a archive page:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">---</span>
+<span class="nx">layout</span><span class="err">:</span> <span class="nx">page</span>
+<span class="nl">title</span><span class="p">:</span> <span class="nx">Archive</span>
+<span class="o">---</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="nx">post</span> <span class="k">in</span> <span class="nx">site</span><span class="p">.</span><span class="nx">posts</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{{</span> <span class="nx">post</span><span class="p">.</span><span class="nx">date</span> <span class="o">|</span> <span class="nx">date_to_string</span> <span class="p">}}</span> <span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">raquo</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span> <span class="p">[</span> <span class="p">{{</span> <span class="nx">post</span><span class="p">.</span><span class="nx">title</span>  <span class="p">](</span> <span class="p">{{</span> <span class="nx">post</span><span class="p">.</span><span class="nx">url</span> <span class="p">}})</span>
+<span class="p">{</span><span class="o">%</span> <span class="nx">endfor</span> <span class="o">%</span><span class="p">}</span></code></pre></figure>
+
+<p>A note: I’m followed <a href="https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags">this answer</a> to escape liquid template tags in this blog.</p>
+
+<h3 id="step-4-add-tags-to-posts-and-a-tag-page-to-show-posts-by-tags">Step 4: Add tags to posts, and a tag page to show posts by tags.</h3>
+
+<p>I followed <a href="http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html">this tutorial</a> to add tags to posts, and alphabetize the tag lists on the tag page.</p>
+
+<h3 id="step-5-add-comment-function-to-the-posts">Step 5: Add comment function to the posts.</h3>
+
+<p>I added <a href="https://disqus.com/">Disqus</a> to enable comments under the blog. Here are the steps:</p>
+
+<ul>
+  <li>Create a file <em>comments.html</em> in <em>_includes</em> directory, which contains the code below:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">page</span><span class="p">.</span><span class="nx">comments</span> <span class="o">%</span><span class="p">}</span>
+<span class="c">&lt;!--</span> <span class="nx">Add</span> <span class="nx">Disqus</span> <span class="nx">comments</span><span class="p">.</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"disqus_thread"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;</span>
+    <span class="cm">/* * * CONFIGURATION VARIABLES * * */</span>
+    <span class="kd">var</span> <span class="nx">disqus_shortname</span> <span class="o">=</span> <span class="s1">'Lucia'</span><span class="p">;</span>
+    
+    <span class="cm">/* * * DON'T EDIT BELOW THIS LINE * * */</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">dsq</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">dsq</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'//'</span> <span class="o">+</span> <span class="nx">disqus_shortname</span> <span class="o">+</span> <span class="s1">'.disqus.com/embed.js'</span><span class="p">;</span>
+        <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">dsq</span><span class="p">);</span>
+    <span class="p">})();</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">noscript</span><span class="o">&gt;</span><span class="nx">Please</span> <span class="nx">enable</span> <span class="nx">JavaScript</span> <span class="nx">to</span> <span class="nx">view</span> <span class="nx">the</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"https://disqus.com/?ref_noscript"</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"nofollow"</span><span class="o">&gt;</span><span class="nx">comments</span> <span class="nx">powered</span> <span class="nx">by</span> <span class="nx">Disqus</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/a&gt;&lt;/</span><span class="nx">noscript</span><span class="o">&gt;</span>
+ <span class="p">{</span><span class="o">%</span> <span class="nx">endif</span> <span class="o">%</span><span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Modify the file <em>_layouts/post.html</em>. Add this line at the end of the file:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span><span class="o">%</span> <span class="nx">include</span> <span class="nx">comments</span><span class="p">.</span><span class="nx">html</span> <span class="o">%</span><span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Finally, I can enable comments of a post by adding <em>comments:True</em> in the YAML header of the post.</li>
+</ul>
+
+<h3 id="step-6-only-show-an-excerpt-of-posts-in-home-page">Step 6: Only show an excerpt of posts in Home page.</h3>
+
+<p>Modify the <em>index.html</em> file. Replace the <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.content</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> line with <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">post.content</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">markdownify</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">strip_html</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">truncatewords:</span><span class="w"> </span><span class="err">50</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code>. It’ll gets the first 50 words and strips any formatting.</p>
+
+<h3 id="step-6-write-blogs-using-markdown">Step 6: Write blogs using Markdown.</h3>
+<p>Finally, I installed <a href="http://markdownpad.com/">MarkdownPad</a> to write posts. I created a directory named <em>_drafts</em> to put draft posts. Normally, they won’t be presented when you do <em>jekyll serve</em>. In order to see them, use <em>jekyll serve –draft</em> instead.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+
+
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'Lucia';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+<hr></hr>
+<div class="sidebar-item">
+  <p>
+    &copy; 2017. All rights reserved.
+  </p>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
