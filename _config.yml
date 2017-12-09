@@ -19,6 +19,13 @@ pages:
   About: '/about'
   Tags: '/tags'
 
+# math
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  
 # About/contact
 author:
   name:              'Lucia Xu'
@@ -30,4 +37,4 @@ version:             1.0.0
 github.repo:         https://github.com/LuciaXu
 
 # Gems
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
