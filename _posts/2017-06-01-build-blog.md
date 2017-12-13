@@ -6,7 +6,7 @@ comments: True
 ---
 
 <div class="message">
-  This is a step-by-step record of how I build this blog with Jeklly and GitHub Pages. 
+  This is a step-by-step record of how I build this blog with Jeklly and GitHub Pages.
 </div>
 
 All the files to build this blog could be found at [my Github repository](https://github.com/LuciaXu/LuciaXu.github.io).
@@ -93,7 +93,7 @@ I added [Disqus](https://disqus.com/) to enable comments under the blog. Here ar
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'Lucia';
-    
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -117,5 +117,8 @@ I added [Disqus](https://disqus.com/) to enable comments under the blog. Here ar
 
 Modify the *index.html* file. Replace the `{{"{{ post.content "}}}}` line with `{{"{{ post.content | markdownify | strip_html | truncatewords: 50 "}}}}`. It'll gets the first 50 words and strips any formatting.
 
-### Step 6: Write blogs using Markdown.
+### Step 7: Write blogs using Markdown.
 Finally, I installed [MarkdownPad](http://markdownpad.com/) to write posts. I created a directory named *_drafts* to put draft posts. Normally, they won't be presented when you do *jekyll serve*. In order to see them, use *jekyll serve --draft* instead.
+
+Updating 1: Display math formulas.
+Using MathJax is probably the easiest way to go. I followed [this blog](http://g14n.info/2014/09/math-on-github-pages/) to achieve it.
